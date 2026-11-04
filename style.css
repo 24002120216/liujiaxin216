@@ -1,0 +1,139 @@
+/*
+ * 刘佳欣 - 电视剧热门排行榜样式表
+ * 一比一还原设计稿
+ */
+
+/* ========== 刘佳欣：全局重置 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 刘佳欣：页面背景（模拟设计稿的深色背景） */
+body {
+    background-color: #2c2c2c;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    padding: 20px;
+}
+
+/* ========== 刘佳欣：排行榜卡片容器 ========== */
+.ljx_rank-card {
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* ========== 刘佳欣：Tab 切换栏 ========== */
+.ljx_tab-bar {
+    display: flex;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 12px;
+}
+
+/* 刘佳欣：单个 Tab 项 */
+.ljx_tab-item {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+/* 刘佳欣：Tab 项 hover 效果 */
+.ljx_tab-item:hover {
+    color: #333333;
+}
+
+/* 刘佳欣：Tab 激活态（选中项） */
+.ljx_tab-item--active {
+    color: #333333;
+    font-weight: 600;
+}
+
+/* 刘佳欣：Tab 激活态底部下划线指示器 */
+.ljx_tab-item--active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 2px;
+    background-color: #e74c3c; /* 刘佳欣：红色下划线 */
+}
+
+/* ========== 刘佳欣：排行榜主体（两列布局） ========== */
+.ljx_rank-body {
+    display: flex;
+    padding: 16px 16px 8px;
+}
+
+/* 刘佳欣：左右列通用样式 */
+.ljx_rank-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 刘佳欣：左列（第 1-5 名） */
+.ljx_rank-col--left {
+    /* 左列基础样式，已通过 flex 继承 */
+}
+
+/* 刘佳欣：右列（第 6-10 名） */
+.ljx_rank-col--right {
+    /* 右列基础样式，已通过 flex 继承 */
+}
+
+/* ========== 刘佳欣：排行榜每一行 ========== */
+.ljx_rank-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #333333;
+    line-height: 1.4;
+}
+
+/* ========== 刘佳欣：排名徽章 ========== */
+.ljx_rank-badge {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;      /* 刘佳欣：默认灰色背景 */
+    color: #ffffff;                  /* 刘佳欣：白色数字 */
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+/* 刘佳欣：前 3 名红色徽章 */
+.ljx_rank-badge--top {
+    background-color: #e74c3c;      /* 刘佳欣：红色背景 */
+    color: #ffffff;
+}
+
+/* ========== 刘佳欣：剧集标题 ========== */
+.ljx_rank-title {
+    flex: 1;
+    font-size: 13px;
+    color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
